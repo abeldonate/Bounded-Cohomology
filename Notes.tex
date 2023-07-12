@@ -1,0 +1,117 @@
+\documentclass[leqno]{article}
+\usepackage{verbatim}
+\usepackage{array}
+\usepackage{listings}
+\usepackage{fancyvrb}
+\usepackage{enumitem}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{multicol} \usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{amssymb}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,epsfig,epstopdf,titling,url,array}
+\usepackage{hyperref}
+\usepackage{eso-pic}
+\usepackage{pgf}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{graphicx}
+\DeclareMathOperator{\Ima}{Im}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{xcolor}
+
+% geometry
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+
+% paragraph length
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{proposition}{Proposition}
+\newtheorem*{definition}{Definition}
+\newtheorem*{observation}{Observation}
+
+\newcommand{\incfig}[1]{%
+\center
+\def\svgwidth{0.9\columnwidth}
+\import{./figures/}{#1.pdf_tex}
+}
+\newcommand{\incimg}[1]{%
+\center
+\includegraphics[width=0.9\columnwidth]{images/#1}
+}
+\pdfsuppresswarningpagegroup=1
+
+\title{Notes on Bounded Cohomology of Groups}
+\author{Abel Doñate Muñoz}
+\date{}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{The setting}
+We briefly introduce the object we are about to study.
+
+In a similar way we define cochain complexes in usual topological cohomology we can define in the same way cochain complexes in group cohomology
+
+\begin{definition}[Cochain complex] Given a discrete group $\Gamma $ and an abelian group $A$, the cochain complex is defined as
+\[
+  C^n(\Gamma , A) = \{f: \Gamma ^{n+1}\to A\} , \qquad C^n_{b} (\Gamma , A) = \{f:\Gamma ^{n+1}\to  A | f \text{ is bounded}\}
+\] 
+\end{definition}
+
+\begin{definition}[Coboundary operator] This operator "raises" the degree of the cochain complex $\delta: C^n(\Gamma , A)\to  C^{n+1}(\Gamma , A)$
+\[
+  \delta f(\gamma_0,\ldots, \gamma_{n+1}) = \sum_{i=0}^{n+1} (-1)^{i}f(\gamma_0, \ldots, \hat{\gamma_i}, \ldots, \gamma_{n+1})
+\] 
+\end{definition}
+
+It is straightforward to check $\delta^{k+1} \circ \delta^k = 0$
+
+However, if we define directly the cohomology from the above cochain complex, the information encoded in the structure of the group will be lost, treating the group like a set. For that reason we introduce the $\Gamma -$ invariant cochain complex.
+
+\begin{definition}[$\Gamma -$invariant cochain complex] This is the subset of the cochain complex $C^n(\Gamma , A)^\Gamma \subseteq C^n(\Gamma , A)$ whose elements fulfill
+  \[
+  f(\gamma_0,\ldots, \gamma_n) = f(\gamma\gamma_0,\ldots, \gamma\gamma_n) \quad \ \forall \gamma \in \Gamma 
+  \] 
+\end{definition}
+This is what endows the chains the required structure to properly study a group. For convinience we will shorten the notation and we will make use always $\Gamma -$invariant cochain complex when not specified.
+
+With this in mind we can define now the usual cohomology with the diagram in mind
+\[\begin{tikzcd}
+	0 & {C^0(\Gamma, A)} & {C^1(\Gamma, A)} & {C^2(\Gamma, A)} & {C^2(\Gamma, A)} & \cdots
+	\arrow[from=1-1, to=1-2]
+	\arrow["{\delta^0}", from=1-2, to=1-3]
+	\arrow["{\delta^1}", from=1-3, to=1-4]
+	\arrow["{\delta^2}", from=1-4, to=1-5]
+	\arrow["{\delta^3}", from=1-5, to=1-6]
+\end{tikzcd}\]
+
+\begin{definition}[Cohomology] We define the group cohomology from the Cochain complex and the coboundaty operator as $\displaystyle H^n = \frac{\ker(\delta^n)}{\Ima(\delta^{n-1})}$
+\end{definition}
+
+This is well defined in both cases, the bounded and the unbounded. We realize that the fact $C_b^n(\Gamma , A)\subseteq C^n(\Gamma , A)$ induces a map called comparison map
+\[
+c: H_b^n(\Gamma , A) \to  H^n(\Gamma , A)
+\] 
+The study of this comparison map is fundamental to understand how boundedness can change the setting of the problem.
+
+\section{Inhomogeneous formulation}
+To make computations in low degree we usually make use of inhomogeneous complex to transform the trivial action condition in something more "computable".
+
+
+\end{document}
