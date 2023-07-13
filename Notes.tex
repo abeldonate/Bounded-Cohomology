@@ -111,7 +111,47 @@ c: H_b^n(\Gamma , A) \to  H^n(\Gamma , A)
 The study of this comparison map is fundamental to understand how boundedness can change the setting of the problem.
 
 \section{Inhomogeneous formulation}
-To make computations in low degree we usually make use of inhomogeneous complex to transform the trivial action condition in something more "computable".
+To make computations in low degree we usually make use of inhomogeneous complex to transform the trivial action condition in something easier to work with.
+
+We begin by taking the representant of $f$ that has the first coordinate  $1$. 
+ \[
+f(\gamma_0, \ldots, \gamma_n) = f(1, \gamma_0^{-1}\gamma_1, \gamma_0^{-1}\gamma_2, \ldots, \gamma_0^{-1} \gamma_n)
+\] 
+and we let
+\[
+\begin{cases}
+ g_1 = \gamma_0^{-1}\gamma_1\\
+ g_2 = \gamma_1^{-1}\gamma_2\\
+ \vdots\\
+ g_n = \gamma_{n-1}^{-1} \gamma_n
+\end{cases}
+\Rightarrow \quad
+f(\gamma_0, \ldots, \gamma_n) 
+\leftrightarrow f(1, g_1, g_1g_2, \ldots, g_1g_2\cdots g_n) := h(g_1, g_2, \ldots, g_n)
+\] 
+And this defines a correspondance between the homogeneous and inhomogeneous complexes, which we denote by $\overline{C}^n$.
+
+It is easy to check that the coboundary operator transforms in the following way 
+\begin{definition}[Inhomogeneous coboundary operator]
+  \[
+	\overline{\delta}^nh(g_1, \ldots, g_{n+1}) = h(g_2, \ldots, g_{n+1}) + \sum_{i=1}^n (-1)^ih(g_1, \ldots, g_ig_{i+1}, \ldots, g_{n+1}) + (-1)^{n+1}h(g_1, \ldots, g_n)
+  \] 
+\end{definition}
+
+Henceforth we will make use of $h(g_1, \ldots, g_n)$ when working with inhomogeneous complexes and $f(\gamma_0, \ldots, \gamma_n)$ with homogeneous. We forget the bar notation, since could be derived from the context.
+
+Two classical computation follows, the cohomologies $H^0$ and  $H^1$:
+
+\begin{proposition}
+For any discrete group $H^0(\Gamma , A) = H^0_{b} (\Gamma , A) = A$
+\end{proposition}
+
+\begin{proposition}
+For any discrete group $H^1(\Gamma , A) = Hom(\Gamma , A)$  and  $H^1_{b} (\Gamma , \mathbb{Z}) = 0$
+\end{proposition}
+
+We might be surprised by the different result that boundedness gives us on the computation of $H^1_{b}$, but this is the consequence of the fact that there are no bounded homomorphisms from $\Gamma $ to $\mathbb{Z}$ or $\mathbb{R}$.
+
 
 
 \end{document}
