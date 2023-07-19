@@ -42,6 +42,7 @@
 \newtheorem*{proposition}{Proposition}
 \newtheorem*{definition}{Definition}
 \newtheorem*{observation}{Observation}
+\newtheorem*{openproblem}{Open Problem}
 
 \newcommand{\incfig}[1]{%
 \center
@@ -74,7 +75,9 @@ In a similar way we define cochain complexes in usual topological cohomology we 
 \] 
 \end{definition}
 
-\begin{definition}[Coboundary operator] This operator "raises" the degree of the cochain complex $\delta: C^n(\Gamma , A)\to  C^{n+1}(\Gamma , A)$
+What makes a function bounded is the existence of a constant $C$ such that  $f(\gamma_0, \ldots, \gamma_n)<C \ \forall \gamma_i\in \Gamma $
+
+\begin{definition}[Coboundary operator] This operator "raises" the degree of the cochains $\delta: C^n(\Gamma , A)\to  C^{n+1}(\Gamma , A)$
 \[
   \delta f(\gamma_0,\ldots, \gamma_{n+1}) = \sum_{i=0}^{n+1} (-1)^{i}f(\gamma_0, \ldots, \hat{\gamma_i}, \ldots, \gamma_{n+1})
 \] 
@@ -84,16 +87,16 @@ It is straightforward to check $\delta^{k+1} \circ \delta^k = 0$
 
 However, if we define directly the cohomology from the above cochain complex, the information encoded in the structure of the group will be lost, treating the group like a set. For that reason we introduce the $\Gamma -$ invariant cochain complex.
 
-\begin{definition}[$\Gamma -$invariant cochain complex] This is the subset of the cochain complex $C^n(\Gamma , A)^\Gamma \subseteq C^n(\Gamma , A)$ whose elements fulfill
+\begin{definition}[Cochain complex of $\Gamma -$invariants] This is the subset of the cochain complex $C^n(\Gamma , A)^\Gamma \subseteq C^n(\Gamma , A)$ whose elements fulfill
   \[
   f(\gamma_0,\ldots, \gamma_n) = f(\gamma\gamma_0,\ldots, \gamma\gamma_n) \quad \ \forall \gamma \in \Gamma 
   \] 
 \end{definition}
-This is what endows the chains the required structure to properly study a group. For convinience we will shorten the notation and we will make use always $\Gamma -$invariant cochain complex when not specified.
+This is what endows the cochains with the required structure to properly study a group. For convenience we will shorten the notation and we will make use of $\Gamma -$invariant cochain complex when not specified.
 
 With this in mind we can define now the usual cohomology with the diagram in mind
 \[\begin{tikzcd}
-	0 & {C^0(\Gamma, A)} & {C^1(\Gamma, A)} & {C^2(\Gamma, A)} & {C^2(\Gamma, A)} & \cdots
+	0 & {C^0(\Gamma, A)} & {C^1(\Gamma, A)} & {C^2(\Gamma, A)} & {C^3(\Gamma, A)} & \cdots
 	\arrow[from=1-1, to=1-2]
 	\arrow["{\delta^0}", from=1-2, to=1-3]
 	\arrow["{\delta^1}", from=1-3, to=1-4]
@@ -101,7 +104,7 @@ With this in mind we can define now the usual cohomology with the diagram in min
 	\arrow["{\delta^3}", from=1-5, to=1-6]
 \end{tikzcd}\]
 
-\begin{definition}[Cohomology] We define the group cohomology from the Cochain complex and the coboundaty operator as $\displaystyle H^n = \frac{\ker(\delta^n)}{\im(\delta^{n-1})}$
+\begin{definition}[Gorup Cohomology] We define the group cohomology from the Cochain complex and the coboundaty operator as $\displaystyle H^n = \frac{\ker(\delta^n)}{\im(\delta^{n-1})}$
 \end{definition}
 
 This is well defined in both cases, the bounded and the unbounded. We realize that the fact $C_b^n(\Gamma , A)\subseteq C^n(\Gamma , A)$ induces a map called comparison map
@@ -113,7 +116,7 @@ The study of this comparison map is fundamental to understand how boundedness ca
 \section{Inhomogeneous formulation}
 To make computations in low degree we usually make use of inhomogeneous complex to transform the trivial action condition in something easier to work with.
 
-We begin by taking the representant of $f$ that has the first coordinate  $1$. 
+We begin by taking the tuple $(\gamma_0, \ldots, \gamma_n)\in \Gamma ^{n+1}$ that has the first coordinate  $1$ (i.e. $\gamma_0=1$). 
  \[
 f(\gamma_0, \ldots, \gamma_n) = f(1, \gamma_0^{-1}\gamma_1, \gamma_0^{-1}\gamma_2, \ldots, \gamma_0^{-1} \gamma_n)
 \] 
@@ -153,7 +156,7 @@ For any discrete group $H^1(\Gamma , A) = Hom(\Gamma , A)$  and  $H^1_{b} (\Gamm
 We might be surprised by the different result that boundedness gives us on the computation of $H^1_{b}$, but this is the consequence of the fact that there are no bounded homomorphisms from $\Gamma $ to $\mathbb{Z}$ or $\mathbb{R}$.
 
 \section{Quasimorphisms}
-Compute $H^2_b$ is far more complicated than  $H^0_b$ and  $H^1_b$. There is a classical result that asserts  $H^2$ is in one-to-one correspondence with the isomorphism classes of central extensions of $\Gamma $ by $A$. For the case of bounded cohomology we introduce the idea of quasimorphism.
+Computing $H^2_b$ is far more complicated than  $H^0_b$ and  $H^1_b$. There is a classical result that asserts  $H^2$ is in one-to-one correspondence with the isomorphism classes of central extensions of $\Gamma $ by $A$. For the case of bounded cohomology we introduce the idea of quasimorphism.
 
  \begin{definition}[Quasimorphisms] Let $\Gamma $ a group. The space of quasimorphisms is defined as follows
    \[
@@ -161,14 +164,14 @@ Compute $H^2_b$ is far more complicated than  $H^0_b$ and  $H^1_b$. There is a c
    \] 
 \end{definition}
 
-The study of the following map is crucial for the understanding the relationship between quasimorphisms and second order bounded cohomology.
+The study of the following map is crucial for the understanding of the relationship between quasimorphisms and bounded cohomology of degree 2.
 \[\begin{tikzcd}
 	{QM(\Gamma)} & {\ker(H_b^2(\Gamma, \mathbb{R})} & {H^2(\Gamma, \mathbb{R}))} 
 	\arrow["c", from=1-2, to=1-3]
 	\arrow["A", from=1-1, to=1-2]
 \end{tikzcd}\]
 
-that sends each quasimorphism $\varphi \in QM(\Gamma )$ into $[\delta^1\varphi ]\in H_b^2$. This is trivially well defined, since $\delta^2\circ \delta^1 \varphi =0$, in such a way that $\delta^1 \varphi  \in \ker(C^1)$, and, thus, is mapped to zero in $H^2(\Gamma, \mathbb{R})$. Taking into account the following diagram:
+that sends each quasimorphism $\varphi \in QM(\Gamma )$ to $[\delta^1\varphi ]\in H_b^2$. This is trivially well defined, since $\delta^2\circ \delta^1 \varphi =0$, in such a way that $\delta^1 \varphi  \in \ker(\delta^2)$, and, thus, is mapped to zero in $H^2(\Gamma, \mathbb{R})$. Taking into account the following diagram:
 
 \begin{minipage}{0.5\textwidth}
 \[\begin{tikzcd}
@@ -187,7 +190,7 @@ that sends each quasimorphism $\varphi \in QM(\Gamma )$ into $[\delta^1\varphi ]
 \[
   \Rightarrow \qquad
 \begin{cases}
-  \ker(\delta^2_b) = \ker(\delta^2) \\
+  \ker(\delta^2_b) \subseteq  \ker(\delta^2) \\
   \im(\delta^1_b) \subseteq \im(\delta^1)
 \end{cases}
 \] 
@@ -195,7 +198,7 @@ that sends each quasimorphism $\varphi \in QM(\Gamma )$ into $[\delta^1\varphi ]
 
 what suggest that there are some coboundaries $\delta^1 \varphi $ of $C^1$ which are not coboundaries of $C^1_b$. This is the case of unbounded $\varphi$ that leads to a quasimorphism (there are a few examples later developed such as Brook's or Rolli's quasimorphisms).
 
-Thus, we can decompose every quasimorphism that maps to zero in the map $A$ as a sum of homomorphism and a bounded function.  $\ker(A) = B(\Gamma, \mathbb{R})\oplus Hom(\Gamma , \mathbb{R})$. By the surjectivity of the map finally we have the isomorphism
+Thus, we can decompose every quasimorphism that maps to zero under the map $A$ as a sum of homomorphism and a bounded function.  $\ker(A) = B(\Gamma, \mathbb{R})\oplus Hom(\Gamma , \mathbb{R})$. By the surjectivity of the map finally we have the isomorphism
 \[
 \ker(A: H_b^2(\Gamma , \mathbb{R})\to H^2(\Gamma, \mathbb{R})) \cong \frac{QM(\Gamma )}{Hom(\Gamma , \mathbb{R})\oplus B(\Gamma , \mathbb{R})}
 \] 
@@ -203,9 +206,37 @@ Thus, we can decompose every quasimorphism that maps to zero in the map $A$ as a
 \section{The free group}
 We apply now the techniques of bounded cohomology to the study of the free group. We start with the free group of two elements.
 
-\begin{definition}[Free group of two elements] We call $F_2 = \langle a, b \rangle  $ the group of reduced words generated by the alphabet $\{a, b, a^{-1}, b^{-1}\}$
+\begin{definition}[Free group on two elements] We call $F_2 = \langle a, b \rangle  $ the group of reduced words generated by the alphabet $\{a, b, a^{-1}, b^{-1}\}$
 \end{definition}
 
+Now we recall that $H^2(F, \mathbb{R}) = 0$, and the kernel of the comparison map is the whole space $H^2_b(F, \mathbb{R})$, giving the isomorphism
+\[
+H^2_b(F, \mathbb{R}) \cong \frac{QM(F)}{Hom(F, \mathbb{R})\oplus B(\Gamma , \mathbb{R})}
+\] 
+What means that we can express every nontrivial element $[\delta \varphi ]\in H^2_b$, being $\varphi $ a quasimorphism which is not bounded nor a homomorphism.
+
+The main advantage of working with cohomology instead of homology is that cohomology is endowed with a cup product defined in the following way:
+
+ \begin{definition}[Cup product] We define the cup product as the map
+\begin{align*}
+  \cup : H^n(G, \mathbb{R}) \times H^m(G, \mathbb{R}) &\to H^{n+m}(G, \mathbb{R}) \\
+  ([f], [g]) & \mapsto [f]\cup [g] 
+\end{align*} 
+where $(f\cup g)(g_1, \ldots, g_n, g_{n+1}, \ldots, g_{n+m}) := f(g_1, \ldots, g_n)\cdot g(g_{n+1}, \ldots, g_{n+m})$
+\end{definition}
+
+Two main open questions are now natural to ask:
+
+\begin{openproblem} Can we characterise the group $H^2_b(F, \mathbb{R})$?
+\end{openproblem}
+
+\begin{openproblem} Let  $k>0$ and  $\alpha \in H^k_b(F, \mathbb{R})$ arbitrary. Let $\varphi $ be a quasimorphism. Is  the map
+  \begin{align*}
+	\cup : H^2_b(F, \mathbb{R}) \times H_b^k(F, \mathbb{R}) &\to H^{k+2}_b(F, \mathbb{R}) \\
+	([\delta^1\varphi], \alpha ) &\mapsto \beta 
+  \end{align*}
+  trivial? (i.e. $\beta =[0]$)
+\end{openproblem}
 
 
 
