@@ -257,11 +257,19 @@ where $\alpha $ is an alternating function $\alpha :F\to \mathbb{R}$ and the sum
 \begin{definition}[Calegari Quasimorphisms] We say $\varphi _\alpha $ is a Calegari quasimorphism if $\kappa_{\alpha }(1) < \infty$
 \end{definition}
 
+\begin{theorem} If $\varphi _\alpha \in wl^1_{Br}$, then $[\delta \varphi _\alpha ]\cup \omega =[0]$
+\end{theorem}
+\begin{proof}
+We can proof the following statement in the same way Amontova and Bucher did it in Theorem A (b) (citation needed).
 
+Let $\eta = \sum_{w\in \mathcal{N}^+}\eta_w$, with $\eta_w$ defined as:
+\[
+  \eta_w (g, h_1, \ldots, h_{k-1}) = \sum_{j=1}^{m-l+1} \chi _w (x_j\cdot \ldots\cdot x_{j+l-1})\omega (z_{j+l}(g), h_1, \ldots, h_{k-1})
+\] 
+Now we let $\beta = \varphi_\alpha \cup \omega +\delta \eta = \sum_{w\in \mathcal{N}^+}\left( \alpha _w h_w \cup \omega +\delta\eta_w \right) = \sum_{w\in \mathcal{N}^+}$. One can check that $\delta \beta = (\delta \varphi _\alpha )\cup \omega $, and we only need to show that $\beta $ is bounded.
 
-
-
-
+We know from Amontova and Bucher that  $\|\beta _w\| \le (|w|-1)\|\omega \|_{\infty}$, so $\|\beta _w\|\le \sum_{w\in \mathcal{N}^+}((|w|-1)\alpha _w)\|\omega \|_{\infty}<\infty$, because $\varphi _\alpha \in wl^1_{Br}$
+\end{proof}
 
 
 
