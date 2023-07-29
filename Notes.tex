@@ -104,7 +104,7 @@ With this in mind we can define now the usual cohomology with the diagram in min
 	\arrow["{\delta^3}", from=1-5, to=1-6]
 \end{tikzcd}\]
 
-\begin{definition}[Gorup Cohomology] We define the group cohomology from the Cochain complex and the coboundaty operator as $\displaystyle H^n = \frac{\ker(\delta^n)}{\im(\delta^{n-1})}$
+\begin{definition}[Group Cohomology] We define the group cohomology from the Cochain complex and the coboundaty operator as $\displaystyle H^n(\Gamma , A) = \frac{\ker(\delta^n)}{\im(\delta^{n-1})}$
 \end{definition}
 
 This is well defined in both cases, the bounded and the unbounded. We realize that the fact $C_b^n(\Gamma , A)\subseteq C^n(\Gamma , A)$ induces a map called comparison map
@@ -116,7 +116,7 @@ The study of this comparison map is fundamental to understand how boundedness ca
 \section{Inhomogeneous formulation}
 To make computations in low degree we usually make use of inhomogeneous complex to transform the trivial action condition in something easier to work with.
 
-We begin by taking the tuple $(\gamma_0, \ldots, \gamma_n)\in \Gamma ^{n+1}$ that has the first coordinate  $1$ (i.e. $\gamma_0=1$). 
+Values of $f$ can be calculated on tuples starting with $1$.
  \[
 f(\gamma_0, \ldots, \gamma_n) = f(1, \gamma_0^{-1}\gamma_1, \gamma_0^{-1}\gamma_2, \ldots, \gamma_0^{-1} \gamma_n)
 \] 
@@ -141,9 +141,9 @@ It is easy to check that the coboundary operator transforms in the following way
   \] 
 \end{definition}
 
-Henceforth we will make use of $h(g_1, \ldots, g_n)$ when working with inhomogeneous complexes and $f(\gamma_0, \ldots, \gamma_n)$ with homogeneous. We forget the bar notation, since could be derived from the context.
+Henceforth we will write $h(g_1, \ldots, g_n)$ when working with inhomogeneous complexes and $f(\gamma_0, \ldots, \gamma_n)$ with homogeneous. We forget the bar notation, since could be derived from the context.
 
-Two classical computation follows, the cohomologies $H^0$ and  $H^1$:
+Two classical computation follow, the groups $H^0$ and  $H^1$:
 
 \begin{proposition}
 For any discrete group $H^0(\Gamma , A) = H^0_{b} (\Gamma , A) = A$
@@ -237,6 +237,27 @@ Two main open questions are now natural to ask:
   \end{align*}
   trivial? (i.e. $\beta =[0]$)
 \end{openproblem}
+
+\section{Known quasimorphisms} 
+
+\subsection{Calegari Quasimorphisms}
+Calegari Quasimorphisms are a generalization of small Brooks quasimorphisms. This type of quasimorphisms can be thought as a weighted sum of small Brooks quasimorphisms
+\[
+\varphi _\alpha := \sum_{w\in \mathcal{N}^+} \alpha _w h_w
+\] 
+where $\alpha $ is an alternating function $\alpha :F\to \mathbb{R}$ and the sum runs for the set of non-self-overlapping words.
+
+\begin{definition} Let
+  \[
+  \kappa_\alpha (1):= \sup \left( \sum_{w\in C} |\alpha _w| \right) 
+  \] 
+  be the supremum over all compatible families. This is an intrinsic characteristic of the function $\alpha$.
+\end{definition}
+
+\begin{definition}[Calegari Quasimorphisms] We say $\varphi _\alpha $ is a Calegari quasimorphism if $\kappa_{\alpha }(1) < \infty$
+\end{definition}
+
+
 
 
 
