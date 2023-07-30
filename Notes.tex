@@ -266,10 +266,30 @@ Let $\eta = \sum_{w\in \mathcal{N}^+}\eta_w$, with $\eta_w$ defined as:
 \[
   \eta_w (g, h_1, \ldots, h_{k-1}) = \sum_{j=1}^{m-l+1} \chi _w (x_j\cdot \ldots\cdot x_{j+l-1})\omega (z_{j+l}(g), h_1, \ldots, h_{k-1})
 \] 
-Now we let $\beta = \varphi_\alpha \cup \omega +\delta \eta = \sum_{w\in \mathcal{N}^+}\left( \alpha _w h_w \cup \omega +\delta\eta_w \right) = \sum_{w\in \mathcal{N}^+}$. One can check that $\delta \beta = (\delta \varphi _\alpha )\cup \omega $, and we only need to show that $\beta $ is bounded.
+Now we let $\beta = \varphi_\alpha \cup \omega +\delta \eta = \sum_{w\in \mathcal{N}^+}\left( \alpha _w h_w \cup \omega +\delta\eta_w \right)$. One can check that $\delta \beta = (\delta \varphi _\alpha )\cup \omega $, and we only need to show that $\beta $ is bounded.
 
 We know from Amontova and Bucher that  $\|\beta _w\| \le (|w|-1)\|\omega \|_{\infty}$, so $\|\beta _w\|\le \sum_{w\in \mathcal{N}^+}((|w|-1)\alpha _w)\|\omega \|_{\infty}<\infty$, because $\varphi _\alpha \in wl^1_{Br}$
 \end{proof}
+
+\begin{lemma} Let  $k>0$ even. Then if  $\omega \in C^k(F, \mathbb{R})$ is a cocycle, $\lambda := \omega + A$, with $A\in \mathbb{R}$ is also a cocycle.
+\end{lemma}
+\begin{proof} 
+  \begin{align*}
+	&\delta \lambda (h_1, \ldots, h_{k+1}) = \lambda(h_2,\ldots,h_{k+1}) + \sum _{j=1}^k \lambda (h_1, \ldots, h_jh_{j+1}, \ldots, h(k+1)) - \lambda(h_1, \ldots, h_k) =  \\
+	&= \omega (h_2,\ldots,h_{k+1}) + A + \sum _{j=1}^k( \omega (h_1, \ldots, h_jh_{j+1}, \ldots, h(k+1))+A) - \omega (h_1, \ldots, h_k) -A = \delta \omega (h_1, \ldots, h_{k+1}) = 0
+  \end{align*}
+\end{proof}
+
+Our task now is trying to find a quasimorphism $\varphi _\alpha \in Cal$ such that $[\delta\varphi _\alpha] \cup [\omega] \neq [0]$. We know that such quasimorphism, if exists, is not contained in $wl^1_{Br}$. 
+
+Let $k>0$ even. We will show that we can construct a quasimorphism $\varphi _\alpha \in Cal$ such that we cannot construct a $\eta$ making $\beta = \varphi _\alpha \cup \omega + \delta\eta$ bounded. With the notation of the last theorem, we make $h_1=\ldots=h_{k-1}=1$. Then
+\begin{align*}
+  \beta (g, 1,\ldots,1) = \left( \sum_{w\in \mathcal{N}^+} \alpha _wh_w(g) \right) \omega(1, \ldots, 1) + \left( \eta(1, \ldots, 1) - \sum_{j=0}^k\eta(1,\ldots,1) \right) = \left( \sum_{w\in \mathcal{N}^+}\alpha _wh_w(g) \right)\omega_0 + \eta(1, \ldots, 1) \eta(g, 1,\ldots, 1) 
+\end{align*}
+where $\omega _0 = \omega (1, \ldots, 1)$.
+
+Now we fix $\omega $ such that $\omega_0\neq 0$, and set $\eta(\omega)$.  
+
 
 
 
