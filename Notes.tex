@@ -65,7 +65,7 @@
 \newpage
 
 \section{The setting}
-We briefly introduce the object we are about to study.
+We briefly introduce the object we are about to study. Basic definitions are taken from \cite{frigerio}
 
 In a similar way we define cochain complexes in usual topological cohomology we can define in the same way cochain complexes in group cohomology
 
@@ -239,6 +239,7 @@ Two main open questions are now natural to ask:
 \end{openproblem}
 
 \section{Known quasimorphisms} 
+Although Brools, Rolli and $\Delta -$decomposable quasimorphisms are the most well-known quasimorphisms, we can extend the brooks quasimorphisms by summing them to form Calegari quasimorphisms.
 
 \subsection{Calegari Quasimorphisms}
 Calegari Quasimorphisms are a generalization of small Brooks quasimorphisms. This type of quasimorphisms can be thought as a weighted sum of small Brooks quasimorphisms
@@ -257,19 +258,56 @@ where $\alpha $ is an alternating function $\alpha :F\to \mathbb{R}$ and the sum
 \begin{definition}[Calegari Quasimorphisms] We say $\varphi _\alpha $ is a Calegari quasimorphism if $\kappa_{\alpha }(1) < \infty$
 \end{definition}
 
+\subsection{Classification of Calegari quasimorphisms}
+In \cite{fournier}  the following containment map is proven.
+% https://q.uiver.app/#q=WzAsOCxbMiwwLCJDYWwiXSxbMSwxLCJsXjFfe2luZH0iXSxbMywxLCJcXGthcHBhKGNfMCkiXSxbMiwyLCJsXjFfe0JyfSJdLFswLDIsIlxcU2lnbWFfe0luZH0iXSxbNCwyLCJcXGthcHBhKGxeMSkiXSxbMywzLCJ3bF4xX3tCcn0iXSxbMiw0LCJcXFNpZ21hX3tCcn0iXSxbNyw0XSxbNyw2XSxbNiw1XSxbNiwzXSxbNSwyXSxbMywyXSxbMiwwXSxbNCwxXSxbMSwwXSxbMywxXV0=
+\[\begin{tikzcd}
+	&& Cal \\
+	& {l^1_{ind}} && {\kappa(c_0)} \\
+	{\Sigma_{Ind}} && {l^1_{Br}} && {\kappa(l^1)} \\
+	&&& {wl^1_{Br}} \\
+	&& {\Sigma_{Br}}
+	\arrow[from=5-3, to=3-1]
+	\arrow[from=5-3, to=4-4]
+	\arrow[from=4-4, to=3-5]
+	\arrow[from=4-4, to=3-3]
+	\arrow[from=3-5, to=2-4]
+	\arrow[from=3-3, to=2-4]
+	\arrow[from=2-4, to=1-3]
+	\arrow[from=3-1, to=2-2]
+	\arrow[from=2-2, to=1-3]
+	\arrow[from=3-3, to=2-2]
+\end{tikzcd}\]
+
+\begin{definition}[$ \Sigma _{Br}$ quasimorphism] We say  $\varphi \in \Sigma _{Br}$ if is a finite sum of finite Brooks quasimorphisms
+\end{definition}
+
+\begin{definition}[$wl^1_{Br}$ quasimorphism] We say  $\varphi \in wl^1_{Br}$ if
+  \[
+\sum_{w\in \mathcal{N}^+}  |w||\alpha _\omega |<\infty
+  \] 
+\end{definition}
+
+We will show that Theorem A (b) made in \cite{amontova} for brooks quasimorphisms can be extended for $wl^1_{Br}$ quasimorphisms.
+
 \begin{theorem} If $\varphi _\alpha \in wl^1_{Br}$, then $[\delta \varphi _\alpha ]\cup \omega =[0]$
 \end{theorem}
 \begin{proof}
-We can proof the following statement in the same way Amontova and Bucher did it in Theorem A (b) (citation needed).
+  We can proof the following statement in the same way Amontova and Bucher did it in Theorem A (b) \cite{amontova}.
 
 Let $\eta = \sum_{w\in \mathcal{N}^+}\eta_w$, with $\eta_w$ defined as:
 \[
   \eta_w (g, h_1, \ldots, h_{k-1}) = \sum_{j=1}^{m-l+1} \chi _w (x_j\cdot \ldots\cdot x_{j+l-1})\omega (z_{j+l}(g), h_1, \ldots, h_{k-1})
 \] 
+where $z_j(g)=x_j \cdot  \ldots \cdot x_m$ with $g = x_1\cdot \ldots \cdot x_m$
+
 Now we let $\beta = \varphi_\alpha \cup \omega +\delta \eta = \sum_{w\in \mathcal{N}^+}\left( \alpha _w h_w \cup \omega +\delta\eta_w \right)$. One can check that $\delta \beta = (\delta \varphi _\alpha )\cup \omega $, and we only need to show that $\beta $ is bounded.
 
-We know from Amontova and Bucher that  $\|\beta _w\| \le (|w|-1)\|\omega \|_{\infty}$, so $\|\beta _w\|\le \sum_{w\in \mathcal{N}^+}((|w|-1)\alpha _w)\|\omega \|_{\infty}<\infty$, because $\varphi _\alpha \in wl^1_{Br}$
+From the original theorem we know that $\|\beta _w\| \le (|w|-1)\|\omega \|_{\infty}$, so $\|\beta _w\|\le \sum_{w\in \mathcal{N}^+}((|w|-1)\alpha _w)\|\omega \|_{\infty}<\infty$, because $\varphi _\alpha \in wl^1_{Br}$
 \end{proof}
+
+\begin{comment}
+\section{Some properties of cocycles}
 
 \begin{lemma} Let  $k>0$ even. Then if  $\omega \in C^k(F, \mathbb{R})$ is a cocycle, $\lambda := \omega + A$, with $A\in \mathbb{R}$ is also a cocycle.
 \end{lemma}
@@ -279,19 +317,11 @@ We know from Amontova and Bucher that  $\|\beta _w\| \le (|w|-1)\|\omega \|_{\in
 	&= \omega (h_2,\ldots,h_{k+1}) + A + \sum _{j=1}^k( \omega (h_1, \ldots, h_jh_{j+1}, \ldots, h(k+1))+A) - \omega (h_1, \ldots, h_k) -A = \delta \omega (h_1, \ldots, h_{k+1}) = 0
   \end{align*}
 \end{proof}
-
-Our task now is trying to find a quasimorphism $\varphi _\alpha \in Cal$ such that $[\delta\varphi _\alpha] \cup [\omega] \neq [0]$. We know that such quasimorphism, if exists, is not contained in $wl^1_{Br}$. 
-
-Let $k>0$ even. We will show that we can construct a quasimorphism $\varphi _\alpha \in Cal$ such that we cannot construct a $\eta$ making $\beta = \varphi _\alpha \cup \omega + \delta\eta$ bounded. With the notation of the last theorem, we make $h_1=\ldots=h_{k-1}=1$. Then
-\begin{align*}
-  \beta (g, 1,\ldots,1) = \left( \sum_{w\in \mathcal{N}^+} \alpha _wh_w(g) \right) \omega(1, \ldots, 1) + \left( \eta(1, \ldots, 1) - \sum_{j=0}^k\eta(1,\ldots,1) \right) = \left( \sum_{w\in \mathcal{N}^+}\alpha _wh_w(g) \right)\omega_0 + \eta(1, \ldots, 1) \eta(g, 1,\ldots, 1) 
-\end{align*}
-where $\omega _0 = \omega (1, \ldots, 1)$.
-
-Now we fix $\omega $ such that $\omega_0\neq 0$, and set $\eta(\omega)$.  
+\end{comment}
 
 
-
+\bibliographystyle{plain}
+\bibliography{refs}
 
 
 \end{document}
