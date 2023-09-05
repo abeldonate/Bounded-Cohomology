@@ -65,13 +65,13 @@
 \newpage
 
 \section{The setting}
-We briefly introduce the object we are about to study. Basic definitions are taken from \cite{frigerio}
+We briefly introduce the object we are about to study. Basic definitions are taken from \cite{frigerio}.
 
-In a similar way we define cochain complexes in usual topological cohomology we can define in the same way cochain complexes in group cohomology
+In a similar way we define cochain complexes in usual topological cohomology we can define in the same way cochain complexes in group cohomology.
 
 \begin{definition}[Cochain complex] Given a discrete group $\Gamma $ and an abelian group $A$, the cochain complex is defined as
 \[
-  C^n(\Gamma , A) = \{f: \Gamma ^{n+1}\to A\} , \qquad C^n_{b} (\Gamma , A) = \{f:\Gamma ^{n+1}\to  A | f \text{ is bounded}\}
+  C^n(\Gamma , A) = \{f: \Gamma ^{n+1}\to A\} , \qquad C^n_{b} (\Gamma , A) = \{f:\Gamma ^{n+1}\to  A | f \text{ is bounded}\}.
 \] 
 \end{definition}
 
@@ -79,17 +79,17 @@ What makes a function bounded is the existence of a constant $C$ such that  $f(\
 
 \begin{definition}[Coboundary operator] This operator "raises" the degree of the cochains $\delta: C^n(\Gamma , A)\to  C^{n+1}(\Gamma , A)$
 \[
-  \delta f(\gamma_0,\ldots, \gamma_{n+1}) = \sum_{i=0}^{n+1} (-1)^{i}f(\gamma_0, \ldots, \hat{\gamma_i}, \ldots, \gamma_{n+1})
+  \delta f(\gamma_0,\ldots, \gamma_{n+1}) = \sum_{i=0}^{n+1} (-1)^{i}f(\gamma_0, \ldots, \hat{\gamma_i}, \ldots, \gamma_{n+1}).
 \] 
 \end{definition}
 
-It is straightforward to check $\delta^{k+1} \circ \delta^k = 0$
+It is straightforward to check $\delta^{k+1} \circ \delta^k = 0$.
 
 However, if we define directly the cohomology from the above cochain complex, the information encoded in the structure of the group will be lost, treating the group like a set. For that reason we introduce the $\Gamma -$ invariant cochain complex.
 
 \begin{definition}[Cochain complex of $\Gamma -$invariants] This is the subset of the cochain complex $C^n(\Gamma , A)^\Gamma \subseteq C^n(\Gamma , A)$ whose elements fulfill
   \[
-  f(\gamma_0,\ldots, \gamma_n) = f(\gamma\gamma_0,\ldots, \gamma\gamma_n) \quad \ \forall \gamma \in \Gamma 
+  f(\gamma_0,\ldots, \gamma_n) = f(\gamma\gamma_0,\ldots, \gamma\gamma_n) \quad \ \forall \gamma \in \Gamma .
   \] 
 \end{definition}
 This is what endows the cochains with the required structure to properly study a group. For convenience we will shorten the notation and we will make use of $\Gamma -$invariant cochain complex when not specified.
@@ -104,12 +104,12 @@ With this in mind we can define now the usual cohomology with the diagram in min
 	\arrow["{\delta^3}", from=1-5, to=1-6]
 \end{tikzcd}\]
 
-\begin{definition}[Group Cohomology] We define the group cohomology from the Cochain complex and the coboundaty operator as $\displaystyle H^n(\Gamma , A) = \frac{\ker(\delta^n)}{\im(\delta^{n-1})}$
+\begin{definition}[Group Cohomology] We define the group cohomology from the Cochain complex and the coboundaty operator as $\displaystyle H^n(\Gamma , A) = \frac{\ker(\delta^n)}{\im(\delta^{n-1})}$.
 \end{definition}
 
 This is well defined in both cases, the bounded and the unbounded. We realize that the fact $C_b^n(\Gamma , A)\subseteq C^n(\Gamma , A)$ induces a map called comparison map
 \[
-c: H_b^n(\Gamma , A) \to  H^n(\Gamma , A)
+c: H_b^n(\Gamma , A) \to  H^n(\Gamma , A).
 \] 
 The study of this comparison map is fundamental to understand how boundedness can change the setting of the problem.
 
@@ -130,14 +130,14 @@ and we let
 \end{cases}
 \Rightarrow \quad
 f(\gamma_0, \ldots, \gamma_n) 
-\leftrightarrow f(1, g_1, g_1g_2, \ldots, g_1g_2\cdots g_n) := h(g_1, g_2, \ldots, g_n)
+\leftrightarrow f(1, g_1, g_1g_2, \ldots, g_1g_2\cdots g_n) := h(g_1, g_2, \ldots, g_n).
 \] 
 And this defines a correspondence between the homogeneous and inhomogeneous complexes, which we denote by $\overline{C}^n$.
 
 It is easy to check that the coboundary operator transforms in the following way 
 \begin{definition}[Inhomogeneous coboundary operator]
   \[
-	\overline{\delta}^nh(g_1, \ldots, g_{n+1}) = h(g_2, \ldots, g_{n+1}) + \sum_{i=1}^n (-1)^ih(g_1, \ldots, g_ig_{i+1}, \ldots, g_{n+1}) + (-1)^{n+1}h(g_1, \ldots, g_n)
+	\overline{\delta}^nh(g_1, \ldots, g_{n+1}) = h(g_2, \ldots, g_{n+1}) + \sum_{i=1}^n (-1)^ih(g_1, \ldots, g_ig_{i+1}, \ldots, g_{n+1}) + (-1)^{n+1}h(g_1, \ldots, g_n).
   \] 
 \end{definition}
 
@@ -146,11 +146,11 @@ Henceforth we will write $h(g_1, \ldots, g_n)$ when working with inhomogeneous c
 Two classical computation follow, the groups $H^0$ and  $H^1$:
 
 \begin{proposition}
-For any discrete group $H^0(\Gamma , A) = H^0_{b} (\Gamma , A) = A$
+For any discrete group $H^0(\Gamma , A) = H^0_{b} (\Gamma , A) = A$.
 \end{proposition}
 
 \begin{proposition}
-For any discrete group $H^1(\Gamma , A) = Hom(\Gamma , A)$  and  $H^1_{b} (\Gamma , \mathbb{Z}) = 0$
+For any discrete group $H^1(\Gamma , A) = Hom(\Gamma , A)$  and  $H^1_{b} (\Gamma , \mathbb{Z}) = 0$.
 \end{proposition}
 
 We might be surprised by the different result that boundedness gives us on the computation of $H^1_{b}$, but this is the consequence of the fact that there are no bounded homomorphisms from $\Gamma $ to $\mathbb{Z}$ or $\mathbb{R}$.
@@ -160,7 +160,7 @@ Computing $H^2_b$ is far more complicated than  $H^0_b$ and  $H^1_b$. There is a
 
  \begin{definition}[Quasimorphisms] Let $\Gamma $ a group. The space of quasimorphisms is defined as follows
    \[
-	 QM(\Gamma ) = \{f:\Gamma \to \mathbb{R}: \ \exists C>0 \text{ such that } |f(g_1)+f(g_2)-f(g_1g_2)|<C \ \forall g_1, g_2\in \Gamma  \}   
+	 QM(\Gamma ) = \{f:\Gamma \to \mathbb{R}: \ \exists C>0 \text{ such that } |f(g_1)+f(g_2)-f(g_1g_2)|<C \ \forall g_1, g_2\in \Gamma  \}   .
    \] 
 \end{definition}
 
@@ -180,7 +180,7 @@ that sends each quasimorphism $\varphi \in QM(\Gamma )$ to $[\delta^1\varphi ]\i
 	\arrow["{\delta^1}", from=1-1, to=1-2]
 	\arrow["{\delta^2}", from=1-2, to=1-3]
 	\arrow["{\delta^1_b}", from=2-1, to=2-2]
-	\arrow["{\delta^1_b}", from=2-2, to=2-3]
+	\arrow["{\delta^2_b}", from=2-2, to=2-3]
 	\arrow[hook, from=2-2, to=1-2]
 	\arrow[hook, from=2-1, to=1-1]
 	\arrow[hook, from=2-3, to=1-3]
@@ -200,18 +200,18 @@ what suggest that there are some coboundaries $\delta^1 \varphi $ of $C^1$ which
 
 Thus, we can decompose every quasimorphism that maps to zero under the map $A$ as a sum of homomorphism and a bounded function.  $\ker(A) = B(\Gamma, \mathbb{R})\oplus Hom(\Gamma , \mathbb{R})$. By the surjectivity of the map finally we have the isomorphism
 \[
-\ker(A: H_b^2(\Gamma , \mathbb{R})\to H^2(\Gamma, \mathbb{R})) \cong \frac{QM(\Gamma )}{Hom(\Gamma , \mathbb{R})\oplus B(\Gamma , \mathbb{R})}
+\ker(A: H_b^2(\Gamma , \mathbb{R})\to H^2(\Gamma, \mathbb{R})) \cong \frac{QM(\Gamma )}{Hom(\Gamma , \mathbb{R})\oplus B(\Gamma , \mathbb{R})}.
 \] 
 
 \section{The free group}
-We apply now the techniques of bounded cohomology to the study of the free group. We start with the free group of two elements.
+We apply now the techniques of bounded cohomology to the study of the free group. We start with the free group on two elements.
 
-\begin{definition}[Free group on two elements] We call $F_2 = \langle a, b \rangle  $ the group of reduced words generated by the alphabet $\{a, b, a^{-1}, b^{-1}\}$
+\begin{definition}[Free group on two elements] We call $F_2 = \langle a, b \rangle  $ the group of reduced words generated by the alphabet $\{a, b, a^{-1}, b^{-1}\}$.
 \end{definition}
 
 Now we recall that $H^2(F, \mathbb{R}) = 0$, and the kernel of the comparison map is the whole space $H^2_b(F, \mathbb{R})$, giving the isomorphism
 \[
-H^2_b(F, \mathbb{R}) \cong \frac{QM(F)}{Hom(F, \mathbb{R})\oplus B(\Gamma , \mathbb{R})}
+H^2_b(F, \mathbb{R}) \cong \frac{QM(F)}{Hom(F, \mathbb{R})\oplus B(\Gamma , \mathbb{R})}.
 \] 
 What means that we can express every nontrivial element $[\delta \varphi ]\in H^2_b$, being $\varphi $ a quasimorphism which is not bounded nor a homomorphism.
 
@@ -222,7 +222,7 @@ The main advantage of working with cohomology instead of homology is that cohomo
   \cup : H^n(G, \mathbb{R}) \times H^m(G, \mathbb{R}) &\to H^{n+m}(G, \mathbb{R}) \\
   ([f], [g]) & \mapsto [f]\cup [g] 
 \end{align*} 
-where $(f\cup g)(g_1, \ldots, g_n, g_{n+1}, \ldots, g_{n+m}) := f(g_1, \ldots, g_n)\cdot g(g_{n+1}, \ldots, g_{n+m})$
+where $(f\cup g)(g_1, \ldots, g_n, g_{n+1}, \ldots, g_{n+m}) := f(g_1, \ldots, g_n)\cdot g(g_{n+1}, \ldots, g_{n+m})$.
 \end{definition}
 
 Two main open questions are now natural to ask:
@@ -239,14 +239,14 @@ Two main open questions are now natural to ask:
 \end{openproblem}
 
 \section{Known quasimorphisms} 
-Although Brools, Rolli and $\Delta -$decomposable quasimorphisms are the most well-known quasimorphisms, we can extend the brooks quasimorphisms by summing them to form Calegari quasimorphisms.
+Although Brooks, Rolli and $\Delta -$decomposable quasimorphisms are the most well-known quasimorphisms, we can extend the Brooks quasimorphisms by summing them to form Calegari quasimorphisms.
 
 \subsection{Calegari Quasimorphisms}
-Calegari Quasimorphisms are a generalization of small Brooks quasimorphisms. This type of quasimorphisms can be thought as a weighted sum of small Brooks quasimorphisms
+Calegari Quasimorphisms are a generalization of small Brooks quasimorphisms. This type of quasimorphisms can be thought of a weighted sum of small Brooks quasimorphisms
 \[
 \varphi _\alpha := \sum_{w\in \mathcal{N}^+} \alpha _w h_w
 \] 
-where $\alpha $ is an alternating function $\alpha :F\to \mathbb{R}$ and the sum runs for the set of non-self-overlapping words.
+where $\alpha $ is an alternating function $\alpha :F\to \mathbb{R}$ and the sum runs over the set of non-self-overlapping words.
 
 \begin{definition} Let
   \[
@@ -255,7 +255,7 @@ where $\alpha $ is an alternating function $\alpha :F\to \mathbb{R}$ and the sum
   be the supremum over all compatible families. This is an intrinsic characteristic of the function $\alpha$.
 \end{definition}
 
-\begin{definition}[Calegari Quasimorphisms] We say $\varphi _\alpha $ is a Calegari quasimorphism if $\kappa_{\alpha }(1) < \infty$
+\begin{definition}[Calegari Quasimorphisms] We say $\varphi _\alpha $ is a Calegari quasimorphism if $\kappa_{\alpha }(1) < \infty$.
 \end{definition}
 
 \subsection{Classification of Calegari quasimorphisms}
@@ -279,31 +279,31 @@ In \cite{fournier}  the following containment map is proven.
 	\arrow[from=3-3, to=2-2]
 \end{tikzcd}\]
 
-\begin{definition}[$ \Sigma _{Br}$ quasimorphism] We say  $\varphi \in \Sigma _{Br}$ if is a finite sum of finite Brooks quasimorphisms
+\begin{definition}[$ \Sigma _{Br}$ quasimorphism] We say  $\varphi \in \Sigma _{Br}$ if it is a finite sum of Brooks quasimorphisms.
 \end{definition}
 
 \begin{definition}[$wl^1_{Br}$ quasimorphism] We say  $\varphi \in wl^1_{Br}$ if
   \[
-\sum_{w\in \mathcal{N}^+}  |w||\alpha _\omega |<\infty
+\sum_{w\in \mathcal{N}^+}  |w||\alpha _\omega |<\infty .
   \] 
 \end{definition}
 
-We will show that Theorem A (b) made in \cite{amontova} for brooks quasimorphisms can be extended for $wl^1_{Br}$ quasimorphisms.
+We will show that Theorem A (b) proof in \cite{amontova} for Brooks quasimorphisms can be extended to $wl^1_{Br}$ quasimorphisms.
 
-\begin{theorem} If $\varphi _\alpha \in wl^1_{Br}$, then $[\delta \varphi _\alpha ]\cup \omega =[0]$
+\begin{theorem} If $\varphi _\alpha \in wl^1_{Br}$, then $[\delta \varphi _\alpha ]\cup [\omega] =[0]$ where $\omega$ is a cocycle of non-zero dimension.
 \end{theorem}
 \begin{proof}
-  We can proof the following statement in the same way Amontova and Bucher did it in Theorem A (b) \cite{amontova}.
+  We can prove the following statement in the same way Amontova and Bucher did it in Theorem A (b) \cite{amontova}.
 
 Let $\eta = \sum_{w\in \mathcal{N}^+}\eta_w$, with $\eta_w$ defined as:
 \[
   \eta_w (g, h_1, \ldots, h_{k-1}) = \sum_{j=1}^{m-l+1} \chi _w (x_j\cdot \ldots\cdot x_{j+l-1})\omega (z_{j+l}(g), h_1, \ldots, h_{k-1})
 \] 
-where $z_j(g)=x_j \cdot  \ldots \cdot x_m$ with $g = x_1\cdot \ldots \cdot x_m$
+where $z_j(g)=x_j \cdot  \ldots \cdot x_m$ with $g = x_1\cdot \ldots \cdot x_m$.
 
-Now we let $\beta = \varphi_\alpha \cup \omega +\delta \eta = \sum_{w\in \mathcal{N}^+}\left( \alpha _w h_w \cup \omega +\delta\eta_w \right)$. One can check that $\delta \beta = (\delta \varphi _\alpha )\cup \omega $, and we only need to show that $\beta $ is bounded.
+We define $\beta _w := \alpha _wh_w\cup \omega +\delta \eta_\omega $. Now we let $\beta = \sum_{w\in \mathcal{N}^+} \beta _w = \varphi_\alpha \cup \omega +\delta \eta = \sum_{w\in \mathcal{N}^+}\left( \alpha _w h_w \cup \omega +\delta\eta_w \right)$. One can check that $\delta \beta = (\delta \varphi _\alpha )\cup \omega $, and we only need to show that $\beta $ is bounded.
 
-From the original theorem we know that $\|\beta _w\| \le (|w|-1)\|\omega \|_{\infty}$, so $\|\beta _w\|\le \sum_{w\in \mathcal{N}^+}((|w|-1)\alpha _w)\|\omega \|_{\infty}<\infty$, because $\varphi _\alpha \in wl^1_{Br}$
+From the original theorem we know that $\|\beta _w\| \le (|w|-1)|\alpha _\omega |\|\omega \|_{\infty}$, so $\|\beta \|\le \sum_{w\in \mathcal{N}^+}((|w|-1)|\alpha _w|)\|\omega \|_{\infty}<\infty$, because $\varphi _\alpha \in wl^1_{Br}$.
 \end{proof}
 
 \begin{comment}
